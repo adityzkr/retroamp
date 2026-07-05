@@ -1,6 +1,6 @@
-# Winamp for macOS
+# RetroAmp for macOS
 
-A native-feeling Winamp player for macOS, built with Electron and
+RetroAmp — a native-feeling classic-style player for macOS, built with Electron and
 [Webamp](https://github.com/captbaritone/webamp) — a mature, MIT-licensed
 reimplementation of Winamp 2.9 in JavaScript.
 
@@ -125,3 +125,13 @@ shortcuts, Finder drag-and-drop, traffic-light chrome, ESM renderer over
 `file://` (supported since Electron 28; this app uses Electron 43), and the
 skin/playlist persistence round-trip through `main.js`. Please run
 `npm start` on macOS to confirm these before relying on the app.
+
+## Disclaimer
+
+RetroAmp is an unofficial, fan-made recreation of a classic media player
+aesthetic. It is **not affiliated with, endorsed by, or connected to**
+Winamp, Llama Group SA, or Nullsoft. "Winamp" is a trademark of its
+respective owner. RetroAmp contains no original Winamp source code — the
+player engine is [Webamp](https://github.com/captbaritone/webamp), an
+independent MIT-licensed reimplementation. Classic `.wsz` skins remain the
+property of their original artists.

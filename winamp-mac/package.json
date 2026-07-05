@@ -1,7 +1,7 @@
 {
-  "name": "winamp-mac",
+  "name": "retroamp-mac",
   "version": "1.0.0",
-  "description": "A Winamp player for macOS, built with Electron and Webamp.",
+  "description": "RetroAmp — a classic-style player for macOS, built with Electron and Webamp.",
   "main": "main.js",
   "scripts": {
     "start": "electron .",
@@ -23,8 +23,8 @@
     "electron-builder": "^26.15.3"
   },
   "build": {
-    "appId": "com.docconnect.winampmac",
-    "productName": "Winamp",
+    "appId": "com.adityzkr.retroamp",
+    "productName": "RetroAmp",
     "files": [
       "main.js",
       "preload.js",

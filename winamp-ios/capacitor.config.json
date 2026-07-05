@@ -1,6 +1,6 @@
 {
-  "appId": "com.docconnect.winampios",
-  "appName": "Winamp",
+  "appId": "com.adityzkr.retroamp.ios",
+  "appName": "RetroAmp",
   "webDir": "www",
   "backgroundColor": "#15151c",
   "ios": {

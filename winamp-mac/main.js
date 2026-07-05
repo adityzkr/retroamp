@@ -93,9 +93,9 @@ async function openTrackFiles() {
 async function openSkinFile() {
   if (!mainWindow) return;
   const result = await dialog.showOpenDialog(mainWindow, {
-    title: "Load Winamp Skin",
+    title: "Load Classic Skin",
     properties: ["openFile"],
-    filters: [{ name: "Winamp Skins", extensions: ["wsz", "zip"] }],
+    filters: [{ name: "Classic Skins (.wsz)", extensions: ["wsz", "zip"] }],
   });
   if (result.canceled || result.filePaths.length === 0) return;
   const src = result.filePaths[0];
@@ -330,7 +330,7 @@ function buildDockMenu() {
 }
 
 function registerGlobalHotkeys() {
-  // Winamp-style global hotkeys that work while the app is in the background.
+  // Classic-style global hotkeys that work while the app is in the background.
   // Hardware media keys are intentionally left to the OS media session
   // (Webamp's enableMediaSession) to avoid double-handling.
   const bindings = {

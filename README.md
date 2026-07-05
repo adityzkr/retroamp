@@ -1,6 +1,7 @@
-# Winamp
+# RetroAmp
 
-The classic Winamp player, rebuilt for modern Apple platforms on top of
+A player in the style of the classic Winamp 2.9, built for modern Apple
+platforms on top of
 [Webamp](https://github.com/captbaritone/webamp) — an MIT-licensed
 reimplementation of Winamp 2.9 in JavaScript with full `.wsz` skin support,
 a 10-band equalizer, and the Milkdrop (Butterchurn) visualizer.
@@ -13,13 +14,13 @@ a 10-band equalizer, and the Milkdrop (Butterchurn) visualizer.
 ## Builds
 
 Every push to `main` that touches either app runs the
-[Build Winamp apps](.github/workflows/build-winamp.yml) workflow on GitHub's
+[Build RetroAmp apps](.github/workflows/build-winamp.yml) workflow on GitHub's
 macOS runners (it can also be triggered manually from the Actions tab). It
 produces two artifacts:
 
-- **winamp-macos** — unsigned `.dmg` and `.zip` (right-click → Open on first
+- **retroamp-macos** — unsigned `.dmg` and `.zip` (right-click → Open on first
   launch)
-- **winamp-ios-simulator** — a Simulator `.app`; installing on a physical
+- **retroamp-ios-simulator** — a Simulator `.app`; installing on a physical
   iPhone requires opening `winamp-ios` in Xcode and signing with your
   Apple ID (see the iOS README)
 
@@ -27,3 +28,13 @@ produces two artifacts:
 
 Each app is a self-contained npm project — see its README for setup, dev
 runs, and packaging instructions.
+
+## Disclaimer
+
+RetroAmp is an unofficial, fan-made recreation of a classic media player
+aesthetic. It is **not affiliated with, endorsed by, or connected to**
+Winamp, Llama Group SA, or Nullsoft. "Winamp" is a trademark of its
+respective owner. RetroAmp contains no original Winamp source code — the
+player engine is [Webamp](https://github.com/captbaritone/webamp), an
+independent MIT-licensed reimplementation. Classic `.wsz` skins remain the
+property of their original artists.

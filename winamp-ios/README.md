@@ -1,6 +1,6 @@
-# Winamp for iOS
+# RetroAmp for iOS
 
-A Winamp player for iPhone/iPad, built with
+RetroAmp — a classic-style player for iPhone/iPad, built with
 [Capacitor](https://capacitorjs.com) and
 [Webamp](https://github.com/captbaritone/webamp) — the same MIT-licensed
 Winamp 2.9 reimplementation used by the sibling `winamp-mac/` Electron app,
@@ -72,3 +72,13 @@ on a simulator or device to confirm.
   is a natural next step).
 - No Media Library / CD / video / native plugin support — same constraints
   as the Mac app (see `winamp-mac/README.md`).
+
+## Disclaimer
+
+RetroAmp is an unofficial, fan-made recreation of a classic media player
+aesthetic. It is **not affiliated with, endorsed by, or connected to**
+Winamp, Llama Group SA, or Nullsoft. "Winamp" is a trademark of its
+respective owner. RetroAmp contains no original Winamp source code — the
+player engine is [Webamp](https://github.com/captbaritone/webamp), an
+independent MIT-licensed reimplementation. Classic `.wsz` skins remain the
+property of their original artists.

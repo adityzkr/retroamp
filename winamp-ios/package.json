@@ -1,7 +1,7 @@
 {
-  "name": "winamp-ios",
+  "name": "retroamp-ios",
   "version": "1.0.0",
-  "description": "A Winamp player for iOS, built with Capacitor and Webamp.",
+  "description": "RetroAmp — a classic-style player for iOS, built with Capacitor and Webamp.",
   "scripts": {
     "copy-webamp": "mkdir -p www/lib && cp node_modules/webamp/built/webamp.butterchurn-bundle.min.mjs www/lib/",
     "postinstall": "npm run copy-webamp",

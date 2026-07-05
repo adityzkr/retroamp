@@ -1,4 +1,4 @@
-name: Build Winamp apps
+name: Build RetroAmp apps
 
 on:
   workflow_dispatch:
@@ -36,7 +36,7 @@ jobs:
       - name: Upload macOS artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: winamp-macos
+          name: retroamp-macos
           path: |
             winamp-mac/dist/*.dmg
             winamp-mac/dist/*.zip
@@ -75,11 +75,11 @@ jobs:
       - name: Package simulator .app
         run: |
           cd build/Build/Products/Debug-iphonesimulator
-          zip -r Winamp-iOS-Simulator.zip App.app
+          zip -r RetroAmp-iOS-Simulator.zip App.app
 
       - name: Upload iOS artifact
         uses: actions/upload-artifact@v4
         with:
-          name: winamp-ios-simulator
-          path: winamp-ios/build/Build/Products/Debug-iphonesimulator/Winamp-iOS-Simulator.zip
+          name: retroamp-ios-simulator
+          path: winamp-ios/build/Build/Products/Debug-iphonesimulator/RetroAmp-iOS-Simulator.zip
           if-no-files-found: error
