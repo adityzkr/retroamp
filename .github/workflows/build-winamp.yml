@@ -1,0 +1,85 @@
+name: Build Winamp apps
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - "winamp-mac/**"
+      - "winamp-ios/**"
+      - ".github/workflows/build-winamp.yml"
+
+jobs:
+  build-mac:
+    name: macOS app (.dmg)
+    runs-on: macos-latest
+    defaults:
+      run:
+        working-directory: winamp-mac
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build .dmg and .zip
+        run: npx electron-builder --mac --publish never
+        env:
+          # No signing identity in CI; produce an unsigned build.
+          CSC_IDENTITY_AUTO_DISCOVERY: "false"
+
+      - name: Upload macOS artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: winamp-macos
+          path: |
+            winamp-mac/dist/*.dmg
+            winamp-mac/dist/*.zip
+          if-no-files-found: error
+
+  build-ios:
+    name: iOS app (simulator build)
+    runs-on: macos-latest
+    defaults:
+      run:
+        working-directory: winamp-ios
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Sync Capacitor
+        run: npx cap sync ios
+
+      - name: Build for iOS Simulator (unsigned)
+        run: |
+          xcodebuild \
+            -project ios/App/App.xcodeproj \
+            -scheme App \
+            -sdk iphonesimulator \
+            -configuration Debug \
+            -derivedDataPath build \
+            CODE_SIGNING_ALLOWED=NO \
+            build
+
+      - name: Package simulator .app
+        run: |
+          cd build/Build/Products/Debug-iphonesimulator
+          zip -r Winamp-iOS-Simulator.zip App.app
+
+      - name: Upload iOS artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: winamp-ios-simulator
+          path: winamp-ios/build/Build/Products/Debug-iphonesimulator/Winamp-iOS-Simulator.zip
+          if-no-files-found: error

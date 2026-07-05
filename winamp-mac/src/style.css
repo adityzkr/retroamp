@@ -1,0 +1,102 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  background: #15151c;
+  overflow: hidden;
+  -webkit-app-region: drag;
+  font-family: -apple-system, sans-serif;
+}
+
+#webamp,
+#webamp * {
+  -webkit-app-region: no-drag;
+}
+
+#webamp {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+#url-prompt-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100000;
+  -webkit-app-region: no-drag;
+}
+
+#url-prompt-box {
+  background: #1d1d28;
+  border: 1px solid #3a3a4e;
+  border-radius: 8px;
+  padding: 16px;
+  width: 380px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6);
+}
+
+#url-prompt-title {
+  color: #d6d6e2;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+#url-prompt-input {
+  width: 100%;
+  box-sizing: border-box;
+  background: #12121a;
+  border: 1px solid #3a3a4e;
+  border-radius: 5px;
+  color: #e8e8f0;
+  font-size: 13px;
+  padding: 7px 9px;
+  outline: none;
+}
+
+#url-prompt-input:focus {
+  border-color: #6a6a8e;
+}
+
+#url-prompt-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+#url-prompt-buttons button {
+  background: #2a2a3a;
+  border: 1px solid #3a3a4e;
+  border-radius: 5px;
+  color: #d6d6e2;
+  font-size: 12px;
+  padding: 5px 14px;
+  cursor: pointer;
+}
+
+#url-prompt-buttons button:hover {
+  background: #34344a;
+}
+
+#url-prompt-buttons #url-prompt-ok {
+  background: #3d5afe22;
+  border-color: #5c6bc0;
+}
+
+#empty-hint {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #55586b;
+  font-size: 13px;
+  text-align: center;
+  pointer-events: none;
+}

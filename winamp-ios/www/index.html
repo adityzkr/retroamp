@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
+    />
+    <title>Winamp</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="toolbar">
+      <button id="btn-add-songs">Add Songs</button>
+      <button id="btn-load-skin">Load Skin</button>
+      <button id="btn-milkdrop">Milkdrop</button>
+      <input id="file-songs" type="file" accept="audio/*,.mp3,.m4a,.wav,.ogg,.flac,.aac" multiple hidden />
+      <input id="file-skin" type="file" accept=".wsz,.zip" hidden />
+    </div>
+    <div id="webamp"></div>
+    <script type="module" src="app.js"></script>
+  </body>
+</html>

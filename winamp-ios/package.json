@@ -1,0 +1,22 @@
+{
+  "name": "winamp-ios",
+  "version": "1.0.0",
+  "description": "A Winamp player for iOS, built with Capacitor and Webamp.",
+  "scripts": {
+    "copy-webamp": "mkdir -p www/lib && cp node_modules/webamp/built/webamp.butterchurn-bundle.min.mjs www/lib/",
+    "postinstall": "npm run copy-webamp",
+    "sync": "npm run copy-webamp && cap sync ios",
+    "open": "cap open ios"
+  },
+  "keywords": ["winamp", "capacitor", "ios", "music-player"],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@capacitor/core": "^8.4.1",
+    "@capacitor/ios": "^8.4.1",
+    "webamp": "^2.3.1"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "^8.4.1"
+  }
+}

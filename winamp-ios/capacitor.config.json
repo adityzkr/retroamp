@@ -1,0 +1,10 @@
+{
+  "appId": "com.docconnect.winampios",
+  "appName": "Winamp",
+  "webDir": "www",
+  "backgroundColor": "#15151c",
+  "ios": {
+    "contentInset": "always",
+    "backgroundColor": "#15151c"
+  }
+}

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Webamp Test Harness</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="webamp"></div>
+    <script>
+      window.winampHost = {
+        onInit: (cb) => cb({}),
+        onAddTracks: () => {},
+        onSetSkin: () => {},
+        onCommand: (cb) => (window.__sendCommand = cb),
+        persistState: () => {},
+        minimize: () => {},
+        savePlaylistDialog: () => Promise.resolve(null),
+        loadPlaylistDialog: () => Promise.resolve(null),
+      };
+    </script>
+    <script type="module" src="app.js"></script>
+  </body>
+</html>
